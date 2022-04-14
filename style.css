@@ -1,0 +1,699 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&display=swap");
+:root {
+  --red: rgb(194, 18, 21);
+  --dark-grey: rgb(61, 61, 61);
+  --light-grey: rgb(97, 97, 97);
+  --brightest-grey: rgb(134, 134, 134);
+  --white: rgb(245, 245, 245);
+  --black: rgb(0, 0, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(12px + (22 - 12) * ((100vw - 300px) / (1600 - 300)));
+  letter-spacing: 1px;
+  cursor: none;
+}
+
+.main-page:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url(./images/ferrari-front-view2.jpg) center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* menu contact */
+
+.menu {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 110px;
+  height: 110px;
+  transition: all 1s ease;
+}
+
+.menu-contact {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 10%;
+  left: 84%;
+  background: var(--white);
+  transform: scale(0);
+  transition: 1s ease;
+  border-radius: 50%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  cursor: auto;
+}
+
+.menu-contact .links {
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-contact .links a {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.menu-contact .links a::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: var(--red);
+  transition: 0.5s ease-out;
+}
+
+.menu-contact .links a:hover::after {
+  width: 100%;
+}
+
+.menu-contact .contact-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-contact .contact-back button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-contact .contact-back button:hover {
+  transform: translateX(5px);
+}
+
+.menu-contact .contact-back button img {
+  width: 100%;
+  pointer-events: none;
+}
+
+.menu-contact .my-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.menu-contact .my-logo img {
+  height: 40%;
+}
+
+.menu-contact .my-logo a {
+  color: var(--red);
+  margin-top: 7rem;
+  font-weight: 700;
+}
+
+.menu-contact .contact {
+  background: var(--black);
+  padding: 2rem 3rem;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-contact .contact span {
+  color: var(--red);
+  font-size: 4rem;
+}
+
+.menu-contact .contact h2 {
+  margin-bottom: 2rem;
+}
+
+.menu-contact .contact p {
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.menu-active {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  transform: scale(1);
+  transition: 1s ease;
+  border-radius: 0;
+}
+
+.menu:hover {
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
+.menu svg {
+  height: 110px;
+  width: 110px;
+  pointer-events: none;
+}
+
+/* All circuits  */
+
+.circuits {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 210px;
+  height: 190px;
+}
+
+.circuits span {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  top: -70px;
+  left: 15px;
+  opacity: 0;
+  display: block;
+  transition: all 0.7s ease;
+  pointer-events: none;
+}
+
+.circuits:hover span {
+  opacity: 1;
+}
+
+.circuits svg {
+  pointer-events: none;
+}
+
+#main-track-hover {
+  stroke-dasharray: 2310.717041015625;
+  stroke-dashoffset: 2310.717041015625;
+}
+
+.circuits:hover #main-track-hover {
+  animation: trackColor 1s ease-in-out forwards;
+  stroke: var(--red);
+  stroke-width: 7;
+}
+
+.circuits-page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  transform: translate(-100%, -100%);
+  transition: 1s ease;
+  padding: 1rem 2rem;
+  cursor: auto;
+}
+
+.circuits-page button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.circuits-page button:hover {
+  transform: translateX(5px);
+}
+
+.circuits-page button img {
+  width: 70%;
+  pointer-events: none;
+}
+
+.circuits-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.circuits-container {
+  display: flex;
+  overflow-x: scroll;
+  margin: auto 0;
+  scrollbar-color: var(--red) transparent;
+  flex: 0 0 90%;
+}
+
+.circuits-container::-webkit-scrollbar {
+  height: 45px;
+}
+
+.circuits-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.circuits-container::-webkit-scrollbar-button:single-button:increment {
+  background-image: url(./images/tree-arrow.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 65px;
+}
+
+.circuits-container::-webkit-scrollbar-button:single-button:decrement {
+  background-image: url(./images/tree-arrow-left.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 65px;
+}
+
+.circuits-container::-webkit-scrollbar-thumb {
+  background-image: url(./images/ferrari-transparent.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 200px;
+}
+
+.circuit-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 1rem 2rem 1rem;
+  flex: 0 0 40%;
+  padding: 0rem 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+  border-top: 6px solid var(--red);
+  border-right: 6px solid var(--red);
+  border-top-right-radius: 15px;
+}
+
+.circuit-wrap img {
+  width: 100%;
+  /* margin: 2rem 0rem; */
+}
+
+.circuit-wrap h2 {
+  font-size: 2rem;
+}
+
+.circuit-wrap p {
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.circuit-wrap span {
+  border-bottom: 2px solid var(--brightest-grey);
+  border-right: 2px solid var(--brightest-grey);
+  border-bottom-right-radius: 10px;
+  padding: 4px 6px;
+  font-weight: 600;
+  color: var(--dark-grey);
+}
+
+.all-circuits {
+  transform: translate(0%, 0%);
+}
+
+@keyframes trackColor {
+  0% {
+    stroke-dashoffset: 2310.717041015625;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Constructors */
+
+.constructors {
+  position: absolute;
+  background: transparent;
+  border: none;
+  top: 75%;
+  right: 10%;
+  cursor: pointer;
+}
+
+.constructors svg {
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+}
+
+#gear-small {
+  stroke-dasharray: 2310;
+  stroke-dashoffset: 2310;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+.constructors:hover #gear-small {
+  animation: smallGearRotate 10s linear infinite;
+}
+
+#gear-large {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+.constructors:hover #gear-large {
+  animation: largeGearRotate 10s linear infinite;
+}
+
+@keyframes smallGearRotate {
+  0% {
+    transform: rotate(0deg);
+    stroke-dashoffset: 2310;
+  }
+  100% {
+    transform: rotate(360deg);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes largeGearRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.constructors-page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  transform: translate(100%, -100%);
+  transition: 1s ease;
+  padding: 0rem 2rem;
+  cursor: auto;
+  background-image: url(./images/start-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.constructors-page-active {
+  transform: translate(0%, -100%);
+}
+
+.constructors-page button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.constructors-page button:hover {
+  transform: translateX(5px);
+}
+
+.constructors-page button img {
+  width: 70%;
+  pointer-events: none;
+}
+
+.constructors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--white);
+  padding: 0 1rem;
+  height: 90vh;
+}
+
+.constructor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.6rem 0;
+}
+
+.constructor .logo {
+  display: flex;
+  align-items: center;
+}
+
+.constructor .logo img {
+  width: 40px;
+  margin-left: 10px;
+}
+
+.first-constructor {
+  height: 90vh;
+  display: flex;
+  flex: 0 0 48%;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem 0;
+  font-size: 3rem;
+}
+
+.constructors-list {
+  flex: 0 0 50%;
+  padding: 1rem;
+  overflow-y: scroll;
+  height: 90vh;
+}
+
+/* Drivers */
+
+.drivers {
+  position: absolute;
+  left: 10%;
+  top: 75%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.drivers:hover {
+  transform: rotate(-10deg);
+}
+
+.drivers svg {
+  width: 130px;
+  height: 100px;
+  pointer-events: none;
+}
+
+.drivers-page {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 10%;
+  left: 14%;
+  background: var(--white);
+  transform: scale(0);
+  transition: 1s ease;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  cursor: auto;
+  background-image: url(./images/start-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 2rem;
+}
+
+.drivers-page-active {
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  transform: scale(1);
+}
+
+.drivers-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.drivers-header h3,
+span {
+  color: var(--white);
+  font-weight: 400;
+}
+
+.drivers-page button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.drivers-page button:hover {
+  transform: translateX(5px);
+}
+
+.drivers-page button img {
+  width: 70%;
+  pointer-events: none;
+}
+
+.drivers-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--white);
+  padding: 1rem;
+  height: 90vh;
+}
+
+.drivers-list {
+  flex: 0 0 50%;
+  padding: 1rem;
+  overflow-y: scroll;
+  height: 90vh;
+}
+
+.driver {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.6rem 0;
+}
+
+.first-driver .driver {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+}
+
+.first-driver {
+  height: 90vh;
+  display: flex;
+  flex: 0 0 48%;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem 0;
+  font-size: 3rem;
+}
+
+.position {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40px;
+}
+
+/* cursor */
+
+.cursor {
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-16%, -26%);
+  pointer-events: none;
+}
+
+.cursor img {
+  width: 100%;
+}
+
+.active {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* list */
+
+.option-wrap {
+  position: relative;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.option {
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  display: inline-block;
+  width: 300px;
+}
+
+.option ul {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.option ul li {
+  list-style: none;
+  color: var(--white);
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.option-wrap button {
+  background: transparent;
+  color: var(--red);
+  padding: 0rem 0.3rem;
+  cursor: pointer;
+  height: 100%;
+  font-size: 2rem;
+}
+
+.option-wrap button:hover {
+  background: var(--red);
+  color: var(--black);
+  transform: translateX(0px);
+}
+
+.left-btn {
+  position: absolute;
+  left: 0px;
+}
+
+.right-btn {
+  position: absolute;
+  right: 0px;
+}
