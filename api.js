@@ -89,7 +89,7 @@ document.addEventListener('click', (e) => {
 })
 
 async function fetchDrivers(value = y) {
-    fetchLink = `http://ergast.com/api/f1/${value}/driverstandings.json`;
+    fetchLink = `https://ergast.com/api/f1/${value}/driverstandings.json`;
     const data = await fetchApi(fetchLink);
     const driversData = await data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 
@@ -139,7 +139,7 @@ function generateDrivers(driversData) {
 // Constructors
 
 async function fetchConstructor(valueConstr = y) {
-    fetchLink = `http://ergast.com/api/f1/${valueConstr}/constructorStandings.json`;
+    fetchLink = `https://ergast.com/api/f1/${valueConstr}/constructorStandings.json`;
     const data = await fetchApi(fetchLink);
     const constructorsData = await data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
     // console.log(constructorsData);
