@@ -1,4 +1,4 @@
-const key = '00a36c815amshe6c56b94c38c7a2p19bd28jsn1f3f126b68e4';
+const key = '';
 const circuits = document.querySelector('.circuits-container');
 const driversContainer = document.querySelector('.drivers-container');
 const drivers = document.querySelector('.drivers-list');
