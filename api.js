@@ -1,4 +1,4 @@
-const key = '00a36c815amshe6c56b94c38c7a2p19bd28jsn1f3f126b68e4';
+const key = '';
 const circuits = document.querySelector('.circuits-container');
 const driversContainer = document.querySelector('.drivers-container');
 const drivers = document.querySelector('.drivers-list');
@@ -29,7 +29,7 @@ async function fetchCircuits() {
         }
     });
     const data = await dataCircuits.json();
-    // console.log(data);
+    console.log(data);
     generateCircuits(data);
 }
 fetchCircuits();
@@ -89,7 +89,7 @@ document.addEventListener('click', (e) => {
 })
 
 async function fetchDrivers(value = y) {
-    fetchLink = `http://ergast.com/api/f1/${value}/driverstandings.json`;
+    fetchLink = `https://ergast.com/api/f1/${value}/driverstandings.json`;
     const data = await fetchApi(fetchLink);
     const driversData = await data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 
@@ -139,7 +139,7 @@ function generateDrivers(driversData) {
 // Constructors
 
 async function fetchConstructor(valueConstr = y) {
-    fetchLink = `http://ergast.com/api/f1/${valueConstr}/constructorStandings.json`;
+    fetchLink = `https://ergast.com/api/f1/${valueConstr}/constructorStandings.json`;
     const data = await fetchApi(fetchLink);
     const constructorsData = await data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
     // console.log(constructorsData);
